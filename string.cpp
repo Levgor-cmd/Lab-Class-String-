@@ -14,6 +14,12 @@ public:
         Data = nullptr;
     }
 
+    String(String&& rhs) noexcept
+    {
+        Data = rhs.Data;
+        rhs.Data = nullptr;
+    }
+
     String(const String& rhs)
     {
         int len = rhs.Size();
